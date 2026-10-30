@@ -7,7 +7,7 @@
 ## 시작 (과제 작업 폴더에서)
 
 ```bash
-git clone --depth 1 https://github.com/<계정>/<레포> kit
+git clone --depth 1 https://github.com/lukasjinsh/hynix-kit kit
 bash kit/scripts/bootstrap.sh
 ```
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 사용법: 과제 작업 폴더(README.md가 있는 곳)에서
-#   git clone --depth 1 https://github.com/<계정>/<레포> kit
+#   git clone --depth 1 https://github.com/lukasjinsh/hynix-kit kit
 #   bash kit/scripts/bootstrap.sh
 #
 # 하는 일: 스타터 앱 + AGENTS.md + docs/ + PROMPTS/REFERENCES를 현재 폴더에 복사(기존 파일은 덮어쓰지 않음)
@@ -16,7 +16,7 @@ echo "▶ 키트: $KIT"
 echo "▶ 대상: $T"
 
 # 1. 스타터 앱 (dotfile 포함). 이미 있는 파일은 건너뜀.
-cp -rn "$KIT/app/." "$T/"
+cp -rn "$KIT/app/." "$T/" 2>/dev/null || true  # macOS cp -n은 건너뛴 파일이 있으면 exit 1
 
 # 2. 에이전트 규칙 + 문서 템플릿
 cp -n "$KIT/AGENTS.md" "$T/AGENTS.md" 2>/dev/null || true
